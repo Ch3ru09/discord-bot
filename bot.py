@@ -1,5 +1,18 @@
-import discord;
-import os;
+import discord
+import os
+from discord.ext import commands
+from dotenv import load_dotenv
 
-client = discord.Client();
+load_dotenv()
 
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix='>>', intents=intents)
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+
+bot.run(os.getenv('TOKEN'))
