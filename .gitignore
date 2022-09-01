@@ -1,1 +1,2 @@
-.env
+/messenger/.env
+/messenger/node_modules/
